@@ -7,6 +7,8 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
 import { api } from "~/utils/api";
 import { ColorModeSwitcher } from "~/components/ColorModeSwitcher";
+import { Nav } from "~/components/Nav";
+import { FbBack } from "~/components/fbeet";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -17,7 +19,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
           modalSize="compact"
           theme={darkTheme()}
         >
-          <ColorModeSwitcher />
+          <FbBack />
+          <Nav />
           <Component {...pageProps} />
         </RainbowKitProvider>
       </WagmiConfig>

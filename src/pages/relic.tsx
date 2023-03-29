@@ -11,7 +11,7 @@ import {
 import { useToast } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { CustomConnectButton } from "~/components/CustomConnectButton";
-import { FbBack, FbSmall } from "~/components/fbeet";
+import { FbSmall } from "~/components/fbeet";
 import { useAccount } from "wagmi";
 import { api } from "~/utils/api";
 
@@ -27,7 +27,6 @@ const Read: NextPage = () => {
         <CustomConnectButton />
         {account.isConnected && <RelicDisplay />}
       </VStack>
-      <FbBack />
     </>
   );
 };
@@ -49,7 +48,13 @@ const RelicDisplay = () => {
     { enabled: myAddr !== "" }
   ).data;
 
+  const relicList = api.relic.relicsByAddress.useQuery(
+    { address: myAddr },
+    { enabled: myAddr !== "" }
+  ).data?.list;
+
   console.log(relicPositions);
+  console.log(relicList);
 
   if (relicPositions?.level.ids.length === 0) {
     return (
@@ -71,6 +76,9 @@ const RelicDisplay = () => {
                 <Card m={12} p={6} w={300} variant="outline">
                   <Text>Relic #{rel}</Text>
                   <Divider m={3} />
+                  <Text>
+                    Level: {relicPositions.level.positions[index]?.level}
+                  </Text>
                   <Text>
                     Level: {relicPositions.level.positions[index]?.level}
                   </Text>

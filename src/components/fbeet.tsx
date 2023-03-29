@@ -36,7 +36,7 @@ export const FbBack = () => {
           height: "100%",
           position: "fixed",
           margin: "auto",
-          top: "30px",
+          top: "0px",
           objectFit: "contain",
           zIndex: "-7",
         }}
