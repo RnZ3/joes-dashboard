@@ -192,7 +192,7 @@ export async function relicPositionsOfOwner(owner: Address) {
       rewardCredit: parseFloat(ethers.utils.formatEther(position.rewardCredit)),
       entry: position.entry.toNumber(),
       poolId: position.poolId.toNumber(),
-      level: position.level.toNumber(),
+      level: position.level.toNumber() + 1,
     };
     return pos;
   });
