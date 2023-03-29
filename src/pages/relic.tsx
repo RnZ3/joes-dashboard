@@ -24,8 +24,7 @@ const Relic: NextPage = () => {
     <>
       <VStack m={5}>
         <Heading>Relic Tool</Heading>
-        <CustomConnectButton />
-        {account.isConnected && <RelicDisplay />}
+        {(account.isConnected && <RelicDisplay />) || <CustomConnectButton />}
       </VStack>
     </>
   );
@@ -59,9 +58,9 @@ const RelicDisplay = () => {
   if (relicPositions?.level.ids.length === 0) {
     return (
       <>
-        <p>
+        <Text>
           <FbSmall /> no relics
-        </p>
+        </Text>
       </>
     );
   }
@@ -74,11 +73,8 @@ const RelicDisplay = () => {
             return (
               <Box key={index}>
                 <Card m={12} p={6} w={300} variant="outline">
-                  <Text>Relic #{rel}</Text>
+                  <Text as='b'>Relic #{rel}</Text>
                   <Divider m={3} />
-                  <Text>
-                    Level: {relicPositions.level.positions[index]?.level}
-                  </Text>
                   <Text>
                     Level: {relicPositions.level.positions[index]?.level}
                   </Text>
