@@ -99,5 +99,7 @@ const Read: NextPage = () => {
       </>
     );
   }
+
+  return <></>;
 };
 export default Read;

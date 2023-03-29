@@ -15,7 +15,7 @@ import { FbSmall } from "~/components/fbeet";
 import { useAccount } from "wagmi";
 import { api } from "~/utils/api";
 
-const Read: NextPage = () => {
+const Relic: NextPage = () => {
   const account = useAccount();
 
   console.log(account.address, account.isConnected);
@@ -31,7 +31,7 @@ const Read: NextPage = () => {
   );
 };
 
-export default Read;
+export default Relic;
 
 const RelicDisplay = () => {
   const toast = useToast();

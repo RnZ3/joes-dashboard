@@ -1,8 +1,7 @@
-import { Center, Button, Box, HStack, Icon, Text } from "@chakra-ui/react";
+import { Center, Button, HStack } from "@chakra-ui/react";
 import { ColorModeSwitcher } from "~/components/ColorModeSwitcher";
 import { CustomConnectButton } from "~/components/CustomConnectButton";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export const Nav = () => {
   return (

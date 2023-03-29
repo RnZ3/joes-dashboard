@@ -156,7 +156,7 @@ const Read: NextPage = () => {
                       </Td>
                       <Td isNumeric>
                         <Image
-                          src={rel.imageUrl as string}
+                          src={rel.imageUrl}
                           alt="level image"
                           boxSize="56px"
                         />
